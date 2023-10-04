@@ -17,11 +17,11 @@ public class Email {
 	public Email(String firstName , String lastNmae) {
 		this.firstName = firstName;
 		this.lastName = lastNmae;
-		System.out.println("EMAIL CREATED: " + this.firstName + " "+ this.lastName);
+		
 		
 		// Call a method asking for the department - return the department
 		this.department = setDepartment();
-		System.out.println("Deprtment: " + this.department);
+		
 		
 		// call a method return a random password
 		this.password = randomPassword(defaultPasswordLength);
@@ -29,13 +29,13 @@ public class Email {
 		
 		// Combine elements to email
 		email =  firstName.toLowerCase()+ "." + lastName.toLowerCase()+ "@" + department + "." + companySuffix;
-		System.out.println("Your email is: " + email);
+	
 		
 	}
 	
 	// Ask for the department
 	private String setDepartment() {
-		System.out.println("DEPARTMENT CODES\n1 for Sales\n2 for Development\n3 for Accounting\n0 for none\nEnter department code:");
+		System.out.println("New worker: " + firstName + ". Dpartment Code:\n1 for Sales\n2 for Development\n3 for Accounting\n0 for none\nEnter department code:");
 		Scanner in = new Scanner(System.in);
 		int depChoice = in.nextInt();
 		if (depChoice == 1) {return "sales"; }
@@ -78,8 +78,8 @@ public class Email {
 	
 	public String showInfo() {
 		return "DISPLAY NAME: " + firstName+ " " + lastName +
-				"COMPANY EMAIL: " + email +
-				
+				"\nCOMPANY EMAIL: " + email +
+				"\nMAILBOX CAPACITYT:" + mailboxCapacity + "mb";
 	}
     
 }
